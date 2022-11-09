@@ -19,8 +19,7 @@
    
    We want to develop a model that is both `accurate` — it can predict the Energy Star Score close to the true value — and `interpretable` — we can understand the model predictions. Once we know the goal, we can use it to guide our decisions as we dig into the data and build models.
 # Data Cleaning
-Top of our data
-Load in the data as a Pandas DataFrame
+Top of our data, Loading in the data as a Pandas DataFrame
 ```python
 import pandas as pd
 import numpy as np
@@ -30,6 +29,9 @@ data = pd.read_csv('/Users/richeyjay/Desktop/MachineLearning/env/Code/Energy_and
 print(data.head())
 ```
 ![Top of our Data](env/TerminalOutput/DataHead.png)
+If we observe our subset of data that contains 60 columns we can already see some issues.
+First, we know that we want to predict the `ENERGY STAR` score but we don’t know what any of the columns mean.
+We want to focus on `interpretability`, so its important to understand at least some of the columns.
 
 
 

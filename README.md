@@ -15,8 +15,9 @@
    The objective is to use the energy data to build a model that can predict the Energy Star Score of a building and interpret the results to find the factors which influence the score.
    The data includes the Energy Star Score, which makes this a supervised regression machine learning task:
    - `Supervised:` we have access to both the features and the target and our goal is to train a model that can learn a mapping between the two.
-   - Regression: The Energy Star score is a continuous variable
+   - `Regression:` The Energy Star score is a continuous variable
+
+![Top of our Data](env/TerminalOutput/DataHead.png)
 
 
 
-   

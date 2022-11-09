@@ -17,7 +17,7 @@
    - `Supervised:` we have access to both the features and the target and our goal is to train a model that can learn a mapping between the two.
    - `Regression:` The Energy Star score is a continuous variable
    We want to develop a model that is both `accurate` — it can predict the Energy Star Score close to the true value — and `interpretable` — we can understand the model predictions. Once we know the goal, we can use it to guide our decisions as we dig into the data and build models.
-# Data Cleaning:
+# Data Cleaning
 - Top of our data
 ![Top of our Data](env/TerminalOutput/DataHead.png)
 

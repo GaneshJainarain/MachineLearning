@@ -34,4 +34,6 @@ First, we know that we want to predict the `ENERGY STAR` score but we don’t kn
 We want to focus on `interpretability`, so its important to understand at least some of the columns.
 
 
+After some digging on the web pertaining to the file name "Local Law 84" [Local Law 84](https://www.nyc.gov/site/buildings/codes/compliance-instructions.page) I found an NYC law requiring all buildings of a certain size to report their energy use.
+Some more searching i found the definitions of the columns [Definitions of Columns](https://www.nyc.gov/html/gbee/downloads/misc/nyc_benchmarking_disclosure_data_definitions_2017.pdf)
 

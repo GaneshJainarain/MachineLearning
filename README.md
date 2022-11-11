@@ -39,5 +39,8 @@ Some more searching I found the definitions of the columns. [Definitions of Colu
 
 `Energy Star Score` is defined as 'A 1-to-100 percentile ranking based on self-reported energy usage for the reporting year. The Energy Star score is a relative measure used for comparing the energy efficiency of buildings.'
 
+   ## Handling "Not Available" missing values
+
+   
 
 

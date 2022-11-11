@@ -40,7 +40,9 @@ Some more searching I found the definitions of the columns. [Definitions of Colu
 `Energy Star Score` is defined as 'A 1-to-100 percentile ranking based on self-reported energy usage for the reporting year. The Energy Star score is a relative measure used for comparing the energy efficiency of buildings.'
 
    ## Handling "Not Available" missing values
-
-   
-
-
+This is a string in Python which means that even the columns with numbers will be stored as object datatypes because Pandas converts a column with any strings into a column of all strings. We can see the datatypes of the columns using the dataframe.info() method:
+```python
+# See the column data types and non-missing values
+print(data.info())
+```
+![Column Data](env/TerminalOutput/ColumnData.png)

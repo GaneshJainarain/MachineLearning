@@ -46,3 +46,6 @@ This is a string in Python which means that even the columns with numbers will b
 print(data.info())
 ```
 ![Column Data](env/TerminalOutput/ColumnData.png)
+If we observe some of the columns in the data we can see that some contain numerical metric units such as
+ft², kBtu, kWh etc, but we see that they are stored as objects. Since we cant do numerical analysis on strings
+they will have to be converted to number (specifically float) data types

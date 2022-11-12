@@ -49,3 +49,23 @@ print(data.info())
 If we observe some of the columns in the data we can see that some contain numerical metric units such as
 ft², kBtu, kWh etc, but we see that they are stored as objects. Since we cant do numerical analysis on strings
 they will have to be converted to number (specifically float) data types
+## Converting Data to correct types
+We convert the columns with numbers into numeric data types by replacing the "Not Available" entries with np.nan which can be interpreted as floats. Then we will convert the columns that contain numeric values (such as square feet or energy usage) into numeric datatypes.
+
+```python
+# Replace all occurrences of Not Available with numpy not a number
+data = data.replace({'Not Available': np.nan})
+
+# Iterate through the columns
+for col in list(data.columns):
+    # Select columns that should be numeric
+    if ('ft²' in col or 'kBtu' in col or 'Metric Tons CO2e' in col or 'kWh' in 
+        col or 'therms' in col or 'gal' in col or 'Score' in col):
+        # Convert the data type to float
+        data[col] = data[col].astype(float)
+```
+```python
+data.describe()
+```
+![Corrected Data Types](env/TerminalOutput/CorrectedDataTypes.png)
+

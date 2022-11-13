@@ -67,5 +67,9 @@ for col in list(data.columns):
 ```python
 data.describe()
 ```
+
 ![Corrected Data Types](env/TerminalOutput/CorrectedDataTypes.png)
 
+## Handling Missing Values in dataset 
+We want to start analyzing our data by looking at the percentage of missing values in each column. 
+Missing values are fine when we do `Exploratory Data Analysis`, but they will have to be filled in for machine learning methods.

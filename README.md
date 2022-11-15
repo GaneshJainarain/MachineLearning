@@ -123,3 +123,9 @@ We will remove 11 columns.
 #Drop the columns
 data = data.drop(columns = list(missing_columns))
 ```
+
+## Exploratory Data Analysis
+
+`Exploratory Data Analysis (EDA)` is an open-ended process where we make plots and calculate statistics in order to explore our data. The purpose is to to find anomalies, patterns, trends, or relationships. These may be interesting by themselves (for example finding a correlation between two variables) or they can be used to inform modeling decisions such as which features to use. In short, the goal of EDA is to determine what our data can tell us! EDA generally starts out with a high-level overview, and then narrows in to specific parts of the dataset once as we find interesting areas to examine.
+
+To begin the EDA, we will focus on a single variable, the `Energy Star Score`, because this is the target for our machine learning models. We can rename the column to score for simplicity and then start exploring this value.

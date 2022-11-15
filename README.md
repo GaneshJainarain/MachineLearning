@@ -106,3 +106,4 @@ def missing_values_table(df):
 print(missing_values_table(data))
 ```
 ![Missing Value Percentage per col](env/TerminalOutput/MissingValuePercentagePerCol.png)
+Although we want to be careful to not discard information and should be careful when dropping columns, if a column has a high percentage of missing values, then it probably will not be of much use.

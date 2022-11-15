@@ -106,4 +106,20 @@ def missing_values_table(df):
 print(missing_values_table(data))
 ```
 ![Missing Value Percentage per col](env/TerminalOutput/MissingValuePercentagePerCol.png)
-Although we want to be careful to not discard information and should be careful when dropping columns, if a column has a high percentage of missing values, then it probably will not be of much use.
+Although we want to be careful to not discard information and should be careful when dropping columns, if a column has a high percentage of missing values, then it probably will not be of much use; we will remove any columns with more than 50% missing values.
+
+```python
+# Get the columns with > 50% missing
+missing_df = missing_values_table(data);
+missing_columns = list(missing_df[missing_df['% of Total Values'] > 50].index)
+print('We will remove %d columns.' % len(missing_columns))
+```
+'''
+Your selected dataframe has 60 columns.
+There are 46 columns that have missing values.
+We will remove 11 columns.
+'''
+```python 
+#Drop the columns
+data = data.drop(columns = list(missing_columns))
+```

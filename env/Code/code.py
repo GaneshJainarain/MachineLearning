@@ -48,3 +48,11 @@ def missing_values_table(df):
         return mis_val_table_ren_columns
 
 print(missing_values_table(data))
+
+# Get the columns with > 50% missing
+missing_df = missing_values_table(data);
+missing_columns = list(missing_df[missing_df['% of Total Values'] > 50].index)
+print('We will remove %d columns.' % len(missing_columns))
+# Drop the columns
+data = data.drop(columns = list(missing_columns))
+print(data)

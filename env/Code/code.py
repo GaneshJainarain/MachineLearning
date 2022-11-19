@@ -1,5 +1,7 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+
 # Read in data into a dataframe 
 data = pd.read_csv('/Users/richeyjay/Desktop/MachineLearning/env/Code/Energy_and_Water_Data_Disclosure_for_Local_Law_84_2017__Data_for_Calendar_Year_2016_.csv')
 # Display top of dataframe
@@ -17,7 +19,7 @@ for col in list(data.columns):
         # Convert the data type to float
         data[col] = data[col].astype(float)
 
-print(data.describe())
+#print(data.describe())
 
 # Function to calculate missing values by column
 def missing_values_table(df):
@@ -47,12 +49,24 @@ def missing_values_table(df):
         # Return the dataframe with missing information
         return mis_val_table_ren_columns
 
-print(missing_values_table(data))
+#print(missing_values_table(data))
 
 # Get the columns with > 50% missing
 missing_df = missing_values_table(data);
 missing_columns = list(missing_df[missing_df['% of Total Values'] > 50].index)
-print('We will remove %d columns.' % len(missing_columns))
+#print('We will remove %d columns.' % len(missing_columns))
 # Drop the columns
 data = data.drop(columns = list(missing_columns))
-print(data)
+#print(data)
+
+#figsize(8, 8)
+
+# Rename the score 
+data = data.rename(columns = {'ENERGY STAR Score': 'score'})
+
+# Histogram of the Energy Star Score
+plt.style.use('fivethirtyeight')
+plt.hist(data['score'].dropna(), bins = 100, edgecolor = 'k');
+plt.xlabel('Score'); plt.ylabel('Number of Buildings'); 
+plt.title('Energy Star Score Distribution');
+plt.show()

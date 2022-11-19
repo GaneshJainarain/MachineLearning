@@ -131,5 +131,5 @@ data = data.drop(columns = list(missing_columns))
 To begin the EDA, we will focus on a single variable, the `Energy Star Score`, because this is the target for our machine learning models. We can rename the column to score for simplicity and then start exploring this value.
 
 ## Single Variable Plots
-A single variable (called univariate plot shows the distribution of a single variable such as in a histogram.
+The goal is to predict the Energy Star Score (renamed to score in our data) so a reasonable place to start is examining the distribution of this variable. A histogram is a simple yet effective way to visualize the distribution of a single variable and is easy to make using matplotlib.
 

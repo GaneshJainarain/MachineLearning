@@ -132,4 +132,18 @@ To begin the EDA, we will focus on a single variable, the `Energy Star Score`, b
 
 ## Single Variable Plots
 The goal is to predict the Energy Star Score (renamed to score in our data) so a reasonable place to start is examining the distribution of this variable. A histogram is a simple yet effective way to visualize the distribution of a single variable and is easy to make using matplotlib.
+```python
+# Rename the score 
+data = data.rename(columns = {'ENERGY STAR Score': 'score'})
 
+# Histogram of the Energy Star Score
+plt.style.use('fivethirtyeight')
+plt.hist(data['score'].dropna(), bins = 100, edgecolor = 'k');
+plt.xlabel('Score'); plt.ylabel('Number of Buildings'); 
+plt.title('Energy Star Score Distribution');
+plt.show()
+```
+![Energy Star Score Distribution](env/TerminalOutput/EnergyStarScoreDistribution.png)
+
+
+The Energy Star Score is a percentile rank, we would expect to see a completely flat distribution with each score making up 1% of the distribution (about 90 buildings). However, this is definitely not the case as we can see that the two most common scores, 1 and 100, make up a disproportionate number of the overall scores.

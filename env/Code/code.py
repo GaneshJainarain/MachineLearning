@@ -70,3 +70,23 @@ plt.hist(data['score'].dropna(), bins = 100, edgecolor = 'k');
 plt.xlabel('Score'); plt.ylabel('Number of Buildings'); 
 plt.title('Energy Star Score Distribution');
 plt.show()
+
+# Create a list of buildings with more than 100 measurements
+types = data.dropna(subset=['score'])
+types = types['Largest Property Use Type'].value_counts()
+types = list(types[types.values > 100].index)
+
+# Plot of distribution of scores for building categories
+
+# Plot each building
+for b_type in types:
+    # Select the building type
+    subset = data[data['Largest Property Use Type'] == b_type]
+    
+    # Density plot of Energy Star scores
+    sns.kdeplot(subset['score'].dropna(),
+               label = b_type, shade = False, alpha = 0.8);
+    
+# label the plot
+plt.xlabel('Energy Star Score', size = 20); plt.ylabel('Density', size = 20); 
+plt.title('Density Plot of Energy Star Scores by Building Type', size = 28);

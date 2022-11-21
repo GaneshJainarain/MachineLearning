@@ -75,7 +75,7 @@ plt.show()
 types = data.dropna(subset=['score'])
 types = types['Largest Property Use Type'].value_counts()
 types = list(types[types.values > 100].index)
-
+ 
 # Plot of distribution of scores for building categories
 
 # Plot each building

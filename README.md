@@ -147,3 +147,5 @@ plt.show()
 
 
 The Energy Star Score is a percentile rank, we would expect to see a completely flat distribution with each score making up 1% of the distribution (about 90 buildings). However, this is definitely not the case as we can see that the two most common scores, 1 and 100, make up a disproportionate number of the overall scores.
+
+If we go back to the definition of the score, we see that it is based on “self-reported energy usage” which might explain the very high scores. As a result, this probably is not the most objective measure of a building’s energy efficiency. our objective is only to predict the score and not to devise a better method of scoring buildings!

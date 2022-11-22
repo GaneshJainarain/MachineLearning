@@ -149,3 +149,10 @@ plt.show()
 The Energy Star Score is a percentile rank, we would expect to see a completely flat distribution with each score making up 1% of the distribution (about 90 buildings). However, this is definitely not the case as we can see that the two most common scores, 1 and 100, make up a disproportionate number of the overall scores.
 
 If we go back to the definition of the score, we see that it is based on “self-reported energy usage” which might explain the very high scores. As a result, this probably is not the most objective measure of a building’s energy efficiency. our objective is only to predict the score and not to devise a better method of scoring buildings!
+
+## Looking for Relationships
+
+A major part of EDA is searching for relationships between the features and the target. Variables that are correlated with the target are useful to a model because they can be used to predict the target. One way to examine the effect of a categorical variable (which takes on only a limited set of values) on the target is through a density plot using the `seaborn` library. The first plot we will make shows the distribution of scores by the property type. In order to not clutter the plot, we will limit the graph to building types that have more than 100 observations in the dataset.
+
+![Density Plot of Energy Star Scores by Borough](env/TerminalOutput/DensityPlotEnergyStarScoresBorough.png)
+The borough of the building does not seem to make as significant a difference in the distribution of the score as does the building type. Nonetheless, it might make sense to include the borough as a categorical variable.

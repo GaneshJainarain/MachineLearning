@@ -153,6 +153,14 @@ If we go back to the definition of the score, we see that it is based on “self
 ## Looking for Relationships
 
 A major part of EDA is searching for relationships between the features and the target. Variables that are correlated with the target are useful to a model because they can be used to predict the target. One way to examine the effect of a categorical variable (which takes on only a limited set of values) on the target is through a density plot using the `seaborn` library. The first plot we will make shows the distribution of scores by the property type. In order to not clutter the plot, we will limit the graph to building types that have more than 100 observations in the dataset.
+![Density Plot of Energy Star Scores by Building Type](env/TerminalOutput/DensityPlotEnergyStarScoreBuildingType.png)
+From this graph, we can see that the building type does have an effect on the score (the negative scores on the graph are an artifact of the kernel density estimation procedure). This graph tells us that we should include the property type because this information can be useful for determining the score. As building type is a categorical variable, it will have to be one-hot encoded before we can feed it into a machine learning model.
+
 
 ![Density Plot of Energy Star Scores by Borough](env/TerminalOutput/DensityPlotEnergyStarScoresBorough.png)
 The borough of the building does not seem to make as significant a difference in the distribution of the score as does the building type. Nonetheless, it might make sense to include the borough as a categorical variable.
+
+## Correlations between Features and Target
+
+In order to quantify correlations between the features (variables) and the target, we can calculate the Pearson correlation coefficient. This is a measure of the strength and direction of a linear relationship between two variables: a value of -1 means the two variables are perfectly negatively linearly correlated and a value of +1 means the two variables are perfectly positively linearly correlated. The figure below shows different values of the correlation coefficient and how they appear graphically.
+

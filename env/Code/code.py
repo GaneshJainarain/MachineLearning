@@ -78,7 +78,7 @@ types = list(types[types.values > 100].index)
 
 # Plot of distribution of scores for building categories
 
-'''# Plot each building
+#Plot each building
 for b_type in types:
     # Select the building type
     subset = data[data['Largest Property Use Type'] == b_type]
@@ -86,16 +86,17 @@ for b_type in types:
     # Density plot of Energy Star scores
     sns.kdeplot(subset['score'].dropna(),
                label = b_type, fill = False, alpha = 0.8);
-'''
-'''# label the plot
+
+#label the plot
 plt.xlabel('Energy Star Score', size = 20); plt.ylabel('Density', size = 20); 
 plt.title('Density Plot of Energy Star Scores by Building Type', size = 28);
+plt.legend(loc="upper left")
 plt.show()
-'''
+
 boroughs = data.dropna(subset=['score'])
 boroughs = boroughs['Borough'].value_counts()
 boroughs = list(boroughs[boroughs.values > 100].index)
-
+'''
 # Plot each borough distribution of scores
 for borough in boroughs:
     # Select the building type
@@ -109,4 +110,4 @@ for borough in boroughs:
 plt.xlabel('Energy Star Score', size = 20); plt.ylabel('Density', size = 20); 
 plt.title('Density Plot of Energy Star Scores by Borough', size = 28);
 plt.legend(loc="upper left")
-plt.show()
+plt.show()'''

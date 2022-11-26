@@ -162,5 +162,5 @@ The borough of the building does not seem to make as significant a difference in
 
 ## Correlations between Features and Target
 
-In order to quantify correlations between the features (variables) and the target, we can calculate the Pearson correlation coefficient. This is a measure of the strength and direction of a linear relationship between two variables: a value of -1 means the two variables are perfectly negatively linearly correlated and a value of +1 means the two variables are perfectly positively linearly correlated. The figure below shows different values of the correlation coefficient and how they appear graphically.
+In order to quantify correlations between the features (variables) and the target, we can calculate the `Pearson correlation coefficient`. This is a measure of the strength and direction of a linear relationship between two variables: a value of -1 means the two variables are perfectly negatively linearly correlated and a value of +1 means the two variables are perfectly positively linearly correlated. The figure below shows different values of the correlation coefficient and how they appear graphically.
 

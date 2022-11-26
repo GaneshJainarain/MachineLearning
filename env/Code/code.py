@@ -5,8 +5,8 @@ import seaborn as sns
 # Read in data into a dataframe 
 data = pd.read_csv('/Users/richeyjay/Desktop/MachineLearning/env/Code/Energy_and_Water_Data_Disclosure_for_Local_Law_84_2017__Data_for_Calendar_Year_2016_.csv')
 # Display top of dataframe
-print(data.head())
-print(data.info())
+#print(data.head())
+#print(data.info())
 
 # Replace all occurrences of Not Available with numpy not a number
 data = data.replace({'Not Available': np.nan})
@@ -91,7 +91,7 @@ for b_type in types:
 plt.xlabel('Energy Star Score', size = 20); plt.ylabel('Density', size = 20); 
 plt.title('Density Plot of Energy Star Scores by Building Type', size = 28);
 plt.legend(loc="upper left")
-plt.show()
+#plt.show()
 
 boroughs = data.dropna(subset=['score'])
 boroughs = boroughs['Borough'].value_counts()
@@ -111,3 +111,40 @@ plt.xlabel('Energy Star Score', size = 20); plt.ylabel('Density', size = 20);
 plt.title('Density Plot of Energy Star Scores by Borough', size = 28);
 plt.legend(loc="upper left")
 plt.show()'''
+
+#Find all correlations and sort 
+correlations_data = data.corr()['score'].sort_values()
+
+# Print the most negative correlations
+print(correlations_data.head(15), '\n')
+
+# Print the most positive correlations
+print(correlations_data.tail(15))
+
+# Select the numeric columns
+numeric_subset = data.select_dtypes('number')
+
+# Create columns with square root and log of numeric columns
+for col in numeric_subset.columns:
+    # Skip the Energy Star Score column
+    if col == 'score':
+        next
+    else:
+        numeric_subset['sqrt_' + col] = np.sqrt(numeric_subset[col])
+        numeric_subset['log_' + col] = np.log(numeric_subset[col])
+
+# Select the categorical columns
+categorical_subset = data[['Borough', 'Largest Property Use Type']]
+
+# One hot encode
+categorical_subset = pd.get_dummies(categorical_subset)
+
+# Join the two dataframes using concat
+# Make sure to use axis = 1 to perform a column bind
+features = pd.concat([numeric_subset, categorical_subset], axis = 1)
+
+# Drop buildings without an energy star score
+features = features.dropna(subset = ['score'])
+
+# Find correlations with the score 
+correlations = features.corr()['score'].dropna().sort_values()
